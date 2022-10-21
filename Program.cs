@@ -131,4 +131,95 @@ Console.Write("Input second number: ");
 int number2 = Convert.ToInt32(Console.ReadLine());
 bool res = Square(number1, number2);
 Console.WriteLine(res);   
-*/  
+*/
+// Семинар 3.
+
+/*//Задача 1. Написать программу, которая по заданному номеру четверти покажет диапазон возможных координат точек в этой четверти.
+ void ShowRange(int quart)
+ {
+    if (quart == 1)
+         Console.WriteLine("x > 0 and y > 0");
+    else if (quart == 2)
+         Console.WriteLine("x < 0 and y > 0");
+    else if (quart == 3)
+         Console.WriteLine("x < 0 and y < 0");
+    else if (quart == 4)
+         Console.WriteLine("x > 0 and y < 0");
+    else if(quart < 1 || quart > 4)
+         Console.WriteLine("Wrong number!");
+         
+ }
+
+ Console.Clear();
+ Console.Write("Input a number of quart: ");
+ int quartNum = Convert.ToInt32(Console.ReadLine());
+ ShowRange(quartNum);
+*/
+//Задача 2. Подаются координаты точки, которые не могут быть нулевыми, выдается номер четверти, где лежит.
+/*
+int Quart (int x, int y)
+{
+    int result = 0;
+    if (x > 0 && y > 0)
+        result = 1;
+    else if (x < 0 && y > 0)
+             result = 2;
+    else if (x < 0 && y < 0)
+             result = 3;
+    else if (x > 0 && y < 0)
+             result = 4;
+    return result;
+}
+Console.Clear();
+Console.Write("Input x: ");
+int x = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input y: ");
+int y = Convert.ToInt32(Console.ReadLine());
+
+int result = Quart(x,y);
+if (result == 0)
+    Console.WriteLine("Wrong values!");
+else Console.WriteLine($"The number of Quart is {result}.");
+*/
+
+// Задача 3. Принимаем координаты двух точек. Выдается расстояние между точками в 2 D пространстве.
+/*
+double Distance (double xA, double yA, double xB, double yB)
+{
+    double result = -1;
+    result = Math.Sqrt(Math.Pow((xB-xA),2)+Math.Pow((yB-yA),2));
+    result = Math.Round(result,2);
+    return result;
+}
+
+Console.Clear();
+Console.Write("Input xA: ");
+double xA = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input yA: ");
+double yA = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input xB: ");
+double xB = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input yB: ");
+double yB = Convert.ToInt32(Console.ReadLine());
+double result = Distance (xA, yA, xB, yB);
+
+Console.WriteLine($"Distance between points A and B is {result}.");
+
+*/
+
+// Задача 4. Принимает на вход некоторое N (int). Bывод квадротов числа от 1 до N.
+/*
+void SquareN (int n)
+{
+    int i = 1;
+    while (i <= n)
+    {
+        Console.Write(i*i + " ");
+        i++;
+    }
+}
+Console.Clear();
+Console.Write("Input N: ");
+int inputN = Convert.ToInt32(Console.ReadLine());
+SquareN(inputN);
+*/
