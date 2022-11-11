@@ -223,3 +223,54 @@ Console.Write("Input N: ");
 int inputN = Convert.ToInt32(Console.ReadLine());
 SquareN(inputN);
 */
+//Семинар 4
+
+// Задача 1. Написать метод, на вход натуральное число, на выход сумма чисел до этого числа.
+/*
+int SumN(int number)
+{
+    int sum = 0;
+  for(int i = 1; i <= number; i++)
+    sum += i;
+  
+  return sum;
+}
+
+Console.Clear();
+Console.Write("Input N: ");
+int inputN = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"Sum of numbers between1 and {inputN} is {SumN(inputN)}");
+*/
+
+// Задача 2. на вход число, на выход количесво цифр.
+/*int CountDigit(int number)
+{
+    int digit = 0;
+    while(number != 0)
+    {
+        number = number/10;
+        digit ++;
+    }
+    return digit;
+}
+Console.Clear();
+Console.Write("Input N: ");
+int inputN = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"The count of number in {inputN} is {CountDigit(inputN)}");
+*/
+// Задача 3/ На вход число. на выход произведение чисел до N включительно.
+
+/*int ProductNum (int number)
+{
+    int product = 1;
+    for(int i = 1; i <= number; i ++)
+        product = product*i;
+        
+    
+    return product;
+}
+Console.Clear();
+Console.Write("Input N: ");
+int inputN = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"The product of numbers in {inputN} is {ProductNum(inputN)} .");
+*/
