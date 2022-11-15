@@ -274,3 +274,200 @@ Console.Write("Input N: ");
 int inputN = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine($"The product of numbers in {inputN} is {ProductNum(inputN)} .");
 */
+
+//Семинар 5.
+/*
+
+int[] CreatArray(int size) //Метод заполнения массива введенными числами
+{
+    int[] array = new int[size];
+    for(int i = 0; i < size; i++)
+    {  
+         Console.Write("Input element of array: ");
+        array[i] = Convert.ToInt32(Console.ReadLine());
+    }
+    return array;
+}
+*/
+//Задача: Задан массив из 12 элементов от -9 до 9 нужно посчитать сумму все отрицательных элементов
+/*
+int[] CreatRandomArray(int size, int minValue, int maxValue) //Метод заполнения массива случайными числами
+{
+    int[] array = new int[size];
+    for(int i = 0; i < size; i++)
+        array[i] = new Random().Next(minValue,maxValue+1);
+    return array;
+}
+
+void ShowArray(int[] array) // Метод вывода массива
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    Console.WriteLine();
+}
+
+int FindNegativeSum(int[] array) //Метод нахождения суммы отрицательных элементов в массиве
+
+{
+    int sum = 0;
+
+    for(int i = 0; i < array.Length; i++)
+        if(array[i] < 0)
+            sum += array[i];
+    return sum;
+}
+
+Console.Write("Input the size of array: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a min possible value:");
+int minV = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a max possible value:");
+int maxV = Convert.ToInt32(Console.ReadLine());
+
+int[] myArray = CreatRandomArray(n, minV, maxV);
+ShowArray(myArray);
+
+int negativeSum = FindNegativeSum(myArray);
+Console.WriteLine("Sum of negative elements is " + negativeSum);
+*/
+
+//Задача: Необходимо проверить присутствует ли заданное число в массиве.
+/*
+bool FindNumberArray(int[] array, int find) //Метод поиска заданных чисел в массиве.
+{
+    int size = array.Length;
+    
+    for(int i = 0; i < size; i++)
+    {
+        if (array[i] == find)
+            return true;       
+    }
+    return false;
+}
+int[] CreatArray(int size) //Метод заполнения массива введенными числами
+{
+    int[] array = new int[size];
+    for(int i = 0; i < size; i++)
+    {  
+         Console.Write("Input element of array: ");
+        array[i] = Convert.ToInt32(Console.ReadLine());
+    }
+    return array;
+}
+
+
+int[] CreatRandomArray(int size, int minValue, int maxValue) //Метод заполнения массива случайными числами
+{
+    int[] array = new int[size];
+    for(int i = 0; i < size; i++)
+        array[i] = new Random().Next(minValue,maxValue+1);
+    return array;
+}
+
+void ShowArray(int[] array) // Метод вывода массива
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    Console.WriteLine();
+}
+
+Console.Clear();
+Console.Write("Input the search number: ");
+int findN = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Input the size of array: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a min possible value:");
+int minV = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a max possible value:");
+int maxV = Convert.ToInt32(Console.ReadLine());
+
+int[] myArray = CreatRandomArray(n, minV, maxV);
+
+ShowArray(myArray);
+Console.WriteLine(FindNumberArray(myArray, findN));
+*/
+//задача: Массив из m чисел, которые случайны. Найти количество элементов отрезка от A до B.
+/*
+int[] CreatRandomArray(int size, int minValue, int maxValue) //Метод заполнения массива случайными числами
+{
+    int[] array = new int[size];
+    for(int i = 0; i < size; i++)
+        array[i] = new Random().Next(minValue,maxValue+1);
+    return array;
+    
+}
+void ShowArray(int[] array) // Метод вывода массива
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    Console.WriteLine();
+}
+int CountFindAB (int[] array, int a, int b) // Метод подсчета количества чисел из заданногго отрезка в одномерном массиве. 
+{   
+    int count = 0;
+    for(int i = 0; i < array.Length; i++)
+
+        if(array[i] >= a && array[i] <= b)
+            count ++;
+
+    return count;
+}
+Console.Clear();
+
+Console.Write("Input the size of array: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a min possible value:");
+int minV = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a max possible value:");
+int maxV = Convert.ToInt32(Console.ReadLine());
+int[] myArray = CreatRandomArray(m, minV, maxV);
+
+ShowArray(myArray);
+
+Console.Write("Input A: ");
+int a = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input B: ");
+int b = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine($"The amount of elements in [{a},{b}] is {CountFindAB (myArray, a, b)}");
+
+*/
+// Задача: Замена элементов массива на отрицательный и наоборот.
+/*
+int[] CreatRandomArray(int size, int minValue, int maxValue) //Метод заполнения массива случайными числами
+{
+    int[] array = new int[size];
+    for(int i = 0; i < size; i++)
+        array[i] = new Random().Next(minValue,maxValue+1);
+    return array;
+    
+}
+void ShowArray(int[] array) // Метод вывода массива
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    Console.WriteLine();
+}
+
+int[] Replace(int[] array) // Метод смены знака в одномерном массиве.
+{
+    for(int i = 0; i < array.Length; i++)
+        array[i] = -1*array[i];
+    return array;
+}
+
+Console.Clear();
+
+Console.Write("Input the size of array: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a min possible value:");
+int minV = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a max possible value:");
+int maxV = Convert.ToInt32(Console.ReadLine());
+int[] myArray = CreatRandomArray(m, minV, maxV);
+
+ShowArray(myArray);
+
+ShowArray(Replace(myArray));
+*/
