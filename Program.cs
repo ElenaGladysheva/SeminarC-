@@ -471,3 +471,169 @@ ShowArray(myArray);
 
 ShowArray(Replace(myArray));
 */
+
+//Семинар 6.
+
+//на выходе 5 0. Передается значение, а не сама переменная.
+/*
+void ShowNum (int num)
+{
+    num += 5;
+    Console.WriteLine(num);
+
+}
+
+int a = 0;
+
+ShowNum(a);
+
+Console.WriteLine(a);
+
+*/
+//На выходе 5,5. В массивах передается ссылка на переменную.
+/*
+void ShowNum (int[] num)
+{
+    num[0] += 5;
+    Console.WriteLine(num[0]);
+
+}
+
+int[] a = {0, 6, 2};
+
+ShowNum(a);
+
+Console.WriteLine(a[0]);
+
+*/
+/*
+int[] CreatRandomArray(int size, int minValue, int maxValue) //Метод заполнения массива случайными числами
+{
+    int[] array = new int[size];
+    for(int i = 0; i < size; i++)
+        array[i] = new Random().Next(minValue,maxValue+1);
+    return array;
+    
+}
+void ShowArray(int[] array) // Метод вывода массива
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    Console.WriteLine();
+}
+
+
+*/
+
+//Задача  Написать программу, которая перевернет одномерный массив. (Преобразовательный метод.)
+/*
+void ReverseArray (int[] array) //Метод разворота одномерного массива.
+{
+    for (int i = 0, j = array.Length-1; i < j; i++, j--)
+    {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
+
+Console.Clear();
+
+Console.Write("Input the size of array: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a min possible value:");
+int minV = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a max possible value:");
+int maxV = Convert.ToInt32(Console.ReadLine());
+
+int[] myArray = CreatRandomArray(m, minV, maxV);
+
+ShowArray(myArray);
+ReverseArray(myArray);
+ShowArray(myArray);
+*/
+
+//Задача. На вход три числа. Проверка может ли существовать треугольник с такими сторонами?
+/*
+bool Triangle(int a, int b, int c)
+{
+    if ((a < b + c) && (b < a + c) && (c < a + b ))
+        return true;
+    
+    else return false;
+}
+
+Console.Write("Input A: ");
+int a = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input B: ");
+int b = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input C: ");
+int c = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine(Triangle(a, b, c));
+*/
+// Задача По числам Фибаначи. Вводятся два первых числа ряда Фибаначи. Построить ряд из n элементов.
+/*
+ int[] Fibonachi (int size, int a, int b)
+{
+    int[] array = new int[size];
+    array[0] = a;
+    array[1] = b;
+    for(int i = 2; i< size; i++)
+           array[i] = array[i-1] + array[i-2];
+    return array;
+}
+
+void ShowArray(int[] array) // Метод вывода массива
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    Console.WriteLine();
+}
+Console.Write("Input the size of array: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a:");
+int a = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input b:");
+int b = Convert.ToInt32(Console.ReadLine());
+
+ShowArray(Fibonachi(n, a, b));
+*/
+// Задача Создание массива с теми же значениями, без копирования ссылки.
+/*
+int[] CoppyArray (int[]array)
+{
+    int[] newArray = new int[array.Length];
+    for(int i = 0; i < array.Length; i++)
+        newArray[i] = array[i]; 
+    return newArray;
+}
+int[] CreatRandomArray(int size, int minValue, int maxValue) //Метод заполнения массива случайными числами
+{
+    int[] array = new int[size];
+    for(int i = 0; i < size; i++)
+        array[i] = new Random().Next(minValue,maxValue+1);
+    return array;
+    
+}
+void ShowArray(int[] array) // Метод вывода массива
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    Console.WriteLine();
+}
+Console.Clear();
+
+Console.Write("Input the size of array: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a min possible value:");
+int minV = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a max possible value:");
+int maxV = Convert.ToInt32(Console.ReadLine());
+
+int[] myArray = CreatRandomArray(m, minV, maxV);
+
+ShowArray(myArray);
+
+ShowArray(CoppyArray(myArray));
+*/
