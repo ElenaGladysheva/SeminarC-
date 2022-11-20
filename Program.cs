@@ -637,3 +637,127 @@ ShowArray(myArray);
 
 ShowArray(CoppyArray(myArray));
 */
+//Семинар 7
+
+//Задача: Заполнение  двухмерного массива случайными числами.
+
+
+int[,] CreateRandom2Array(int rows, int columns, int minValue, int maxValue) //Метод заполнения 2d массива случайными числами. 
+{
+    int[,] array = new int[rows, columns];
+    for(int i = 0; i < rows; i++)
+        for(int j = 0; j < columns; j++)
+            array[i,j] = new Random().Next(minValue,maxValue + 1);
+        
+    return array;
+}
+
+
+void Show2Array(int[,] array) //Метод выводв 2D массива
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {   for(int j = 0; j < array.GetLength(1); j++)
+            Console.Write(array[i,j] + " ");
+        Console.WriteLine();
+    }
+     
+}
+
+
+// Console.Clear();
+
+// Console.Write("Input a number of rows: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Input a number of column: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+
+// Console.Write("Input a min possible value:");
+// int minV = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Input a max possible value:");
+// int maxV = Convert.ToInt32(Console.ReadLine());
+
+// int [,] myArray = CreateRandom2Array(m, n, minV, maxV);
+// Show2Array(myArray);
+
+//Задача: Задайте двумерный массив размера m на n, каждый элемент в массиве
+// находится по формуле: Aij = i+j. Выведите полученный массив на экран.
+/*
+int[,] FormulaArray(int rows, int columns)
+{
+    int[,] array = new int[rows,columns];
+    for(int i = 0; i < rows; i++)
+        for(int j = 0; j < columns; j++)
+            array[i,j] = i + j;
+        
+    return array;
+}
+Console.Clear();
+
+Console.Write("Input a number of rows: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a number of column: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+int [,] myArray = FormulaArray(m, n);
+
+Show2Array(myArray);
+*/
+// Задайте двумерный массив. Найдите элементы, у которых оба индекса чётные, 
+//и замените эти элементы на их квадраты.
+/*
+void FindArray (int[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i += 2)
+        for(int j = 0; j < array.GetLength(1); j += 2)
+            array[i,j] *= array[i,j];
+    
+}
+
+Console.Clear();
+
+Console.Write("Input a number of rows: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a number of column: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Input a min possible value:");
+int minV = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a max possible value:");
+int maxV = Convert.ToInt32(Console.ReadLine());
+
+int [,] myArray = CreateRandom2Array(m, n, minV, maxV);
+Show2Array(myArray);
+FindArray (myArray);
+Console.WriteLine();
+Show2Array(myArray);
+*/
+// Задайте двумерный массив. Найдите сумму элементов, находящихся 
+//на главной диагонали (с индексами (0,0); (1;1) и т.д.
+
+int SumElementDiagonal(int[,] array)
+{
+    int sum = 0;
+    for(int i = 0; i < array.GetLength(0) && i < array.GetLength(1); i++)
+        sum += array[i,i];
+
+    return sum;
+}
+
+Console.Clear();
+
+Console.Write("Input a number of rows: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a number of column: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Input a min possible value:");
+int minV = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a max possible value:");
+int maxV = Convert.ToInt32(Console.ReadLine());
+
+int [,] myArray = CreateRandom2Array(m, n, minV, maxV);
+Show2Array(myArray);
+Console.WriteLine($"The sum is: {SumElementDiagonal(myArray)}");
+
+
+
