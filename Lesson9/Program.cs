@@ -43,14 +43,15 @@ ShowNumbers(m,n);
 */
 //Напишите программу, которая на вход принимает два числа A и B, и возводит число А в целую степень B.
 
-int PowerNumber (int a,int b)
+double PowerNumber (double a, double b)
 {
-    if(b != 0) return PowerNumber(a,b-1) * a;
+    if(b > 0) return PowerNumber(a,b-1) * a;
+    if(b < 0) return PowerNumber(a,b+1) / a;
     return 1;
 
 }
 Console.Write("Input A: ");
-int a = Convert.ToInt32(Console.ReadLine());
+double a = Convert.ToDouble(Console.ReadLine());
 Console.Write("Input B: ");
-int b = Convert.ToInt32(Console.ReadLine());
+double b = Convert.ToDouble(Console.ReadLine());
 Console.WriteLine(PowerNumber(a,b));
